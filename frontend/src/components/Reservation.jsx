@@ -24,7 +24,7 @@ const Reservation = () => {
     try {
 
       const response = await axios.post(
-        "http://localhost:4000/api/v1/reservation/send",
+        "https://eatly-ofnr.onrender.com/api/v1/reservation/send",
 
         {
           firstName,

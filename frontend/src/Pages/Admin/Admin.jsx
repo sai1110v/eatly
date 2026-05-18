@@ -33,7 +33,7 @@ const Admin = () => {
     if (isLoggedIn) {
       axios
         .get(
-          "http://localhost:4000/api/v1/reservation/all"
+          "https://eatly-ofnr.onrender.com/api/v1/reservation/all"
         )
         .then((res) => {
           setReservations(
