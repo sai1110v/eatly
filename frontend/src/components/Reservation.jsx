@@ -41,7 +41,7 @@ const Reservation = () => {
             "Content-Type": "application/json",
           },
 
-          withCredentials: true,
+        
         }
       );
 

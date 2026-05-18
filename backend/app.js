@@ -11,12 +11,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://eatlyrestaurant.netlify.app"],
+    origin: "https://eatlyrestaurant.netlify.app",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true,
   })
 );
-
 // This tells the backend to allow security check requests from your frontend
 app.options("*", cors());
 app.use(express.json());
