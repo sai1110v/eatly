@@ -1,0 +1,490 @@
+/* =========================================
+   COMPLETE SMART NAVBAR FINAL CSS
+========================================= */
+
+.smart-navbar{
+  width: 100%;
+  height: 120px;
+
+  position: fixed;
+  top: 20px;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.smart-navbar .logo{
+  position: absolute;
+
+  left: 40px;
+  top: 28px;
+
+  font-size: 2.3rem;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  color: #111;
+}
+
+/* =========================================
+   NAVIGATION CONTAINER
+========================================= */
+
+.navigation{
+  position: relative;
+
+  width: 475px; /* Adjusted for 5 items (5 * 95px) */
+  height: 95px;
+
+  background: rgba(255,255,255,0.96);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 28px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+
+  overflow: visible;
+}
+
+/* =========================================
+   NAVIGATION LIST
+========================================= */
+
+.navigation ul{
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================
+   NAVIGATION ITEM
+========================================= */
+
+.navigation ul li{
+  position: relative;
+
+  width: 95px;
+  height: 95px;
+
+  list-style: none;
+
+  z-index: 2;
+}
+
+/* =========================================
+   LINKS
+========================================= */
+
+.navigation ul li a{
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+/* =========================================
+   ICON
+========================================= */
+
+.navigation ul li a .icon{
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.65rem;
+
+  color: #222;
+
+  transition: 0.45s ease;
+
+  z-index: 5;
+}
+
+/* =========================================
+   ACTIVE ICON
+========================================= */
+
+.navigation ul li.active a .icon{
+  transform: translateY(-16px);
+
+  color: #fff;
+}
+
+/* =========================================
+   TEXT
+========================================= */
+
+.navigation ul li a .text{
+  position: absolute;
+
+  bottom: 12px;
+
+  color: #111;
+
+  font-size: 0.65rem;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  transition: 0.4s ease;
+
+  opacity: 0;
+
+  transform: translateY(10px);
+
+  white-space: nowrap;
+}
+
+/* =========================================
+   ACTIVE TEXT
+========================================= */
+
+.navigation ul li.active a .text{
+  opacity: 1;
+
+  transform: translateY(0px);
+}
+
+/* =========================================
+   PERFECT CENTER BUBBLE
+========================================= */
+
+.indicator{
+  position: absolute;
+
+  top: -6px;
+  left: 8px; /* Centered for 5 items: (95px - 78px) / 2 */
+
+  width: 78px;
+  height: 78px;
+
+  background: #09b2e6;
+
+  border-radius: 50%;
+
+  border: 6px solid #f5f5f5;
+
+  transition: 0.45s ease;
+
+  z-index: 1;
+}
+
+/* =========================================
+   LEFT CURVE
+========================================= */
+
+.indicator::before{
+  content: "";
+
+  position: absolute;
+
+  bottom: 7px;
+  left: -22px;
+
+  width: 20px;
+  height: 20px;
+
+  background: transparent;
+
+  border-top-right-radius: 20px;
+
+  box-shadow: 1px -10px 0 0 #f5f5f5;
+}
+
+/* =========================================
+   RIGHT CURVE
+========================================= */
+
+.indicator::after{
+  content: "";
+
+  position: absolute;
+
+  bottom: 7px;
+  right: -22px;
+
+  width: 20px;
+  height: 20px;
+
+  background: transparent;
+
+  border-top-left-radius: 20px;
+
+  box-shadow: -1px -10px 0 0 #f5f5f5;
+}
+
+/* =========================================
+   PERFECT BUBBLE ALIGNMENT
+========================================= */
+
+.navigation ul li:nth-child(1).active ~ .indicator{
+  transform: translateX(0px);
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator{
+  transform: translateX(95px);
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator{
+  transform: translateX(190px);
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator{
+  transform: translateX(285px);
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator{
+  transform: translateX(380px);
+}
+
+/* =========================================
+   HERO SECTION SPACING FIX
+========================================= */
+
+.heroSection{
+  padding-top: 260px !important;
+}
+
+.heroSection .container{
+  margin-top: 40px;
+}
+
+/* =========================================
+   FIX DELICIOUS / FOOD / DISHES OVERLAP
+========================================= */
+
+.heroSection .content{
+  margin-top: 40px;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media(max-width:768px){
+
+  .smart-navbar{
+    top: 10px;
+  }
+
+  .smart-navbar .logo{
+    left: 20px;
+
+    font-size: 1.8rem;
+  }
+
+  .navigation{
+    width: 95vw;
+
+    height: 85px;
+  }
+
+  .navigation ul li{
+    width: 70px;
+    height: 70px;
+  }
+
+  .navigation ul li a .icon{
+    font-size: 1.3rem;
+  }
+
+  .navigation ul li a .text{
+    font-size: 0.55rem;
+  }
+
+  .indicator{
+    width: 64px;
+    height: 64px;
+
+    top: -18px;
+
+    left: 26px;
+  }
+
+  .navigation ul li:nth-child(1).active ~ .indicator{
+    transform: translateX(0px);
+  }
+
+  .navigation ul li:nth-child(2).active ~ .indicator{
+    transform: translateX(70px);
+  }
+
+  .navigation ul li:nth-child(3).active ~ .indicator{
+    transform: translateX(140px);
+  }
+
+  .navigation ul li:nth-child(4).active ~ .indicator{
+    transform: translateX(210px);
+  }
+
+  .navigation ul li:nth-child(5).active ~ .indicator{
+    transform: translateX(280px);
+  }
+
+  .heroSection{
+    padding-top: 220px !important;
+  }
+}
+
+/* =========================================
+   ADMIN BUTTON
+========================================= */
+
+.admin-button-container{
+  position: absolute;
+  right: 40px; /* Position to the right of the navbar */
+  top: 15px;
+}
+
+.admin-link{
+  position: relative;
+
+  width: 85px;
+  height: 85px;
+
+  background: #000000; /* Black background */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%; /* Circular bubble shape */
+
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 5px;
+  /* Add a default subtle shadow */
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: 0.3s ease;
+
+  transition: 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Combined transitions for smooth hover effects */
+  transition: background 0.3s ease, transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.admin-link .icon{
+  font-size: 1.8rem;
+  transition: 0.45s;
+  z-index: 2;
+}
+
+.admin-link .text{
+  position: absolute;
+  bottom: 15px;
+
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.45s;
+}
+
+.admin-link:hover{
+  /* More pronounced lift, slight scale, and a more prominent shadow on hover */
+  transform: translateY(-5px) scale(1.02);
+  background: #1a1a1a; /* Slightly lighter black/dark grey */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  background: #111;
+  background: #1a1a1a; /* Slightly lighter black/dark grey on hover */
+  /* More pronounced lift and a more prominent shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.admin-link:hover .icon{
+  transform: translateY(-14px);
+}
+
+.admin-link:hover .text{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .navigation {
+    width: 350px; /* Adjusted for 5 items (5 * 70px) */
+    height: 85px;
+  }
+  .navigation ul li {
+    width: 60px; /* Adjusted for 5 items */
+    height: 70px;
+  }
+
+  .indicator {
+    width: 64px;
+    height: 64px;
+    top: -18px; /* Adjusted for centering with 5 items */
+    left: 3px; /* Centered for 5 items: (70px - 64px) / 2 */
+  }
+  .navigation ul li:nth-child(2).active ~ .indicator {
+    transform: translateX(70px);
+  }
+  .navigation ul li:nth-child(3).active ~ .indicator {
+    transform: translateX(140px);
+  }
+  .navigation ul li:nth-child(4).active ~ .indicator {
+    transform: translateX(210px);
+  }
+  .navigation ul li:nth-child(5).active ~ .indicator {
+    transform: translateX(280px);
+  }
+
+  /* Admin button positioning for mobile */
+  .admin-button-container {
+    right: 20px;
+    top: 20px;
+  }
+
+  .admin-link {
+    padding: 8px 15px;
+    font-size: 0.75rem;
+    width: 65px;
+    height: 65px;
+  }
+  .admin-link .icon {
+    font-size: 1.4rem;
+  }
+}
